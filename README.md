@@ -57,3 +57,16 @@ Option B (manual):
 This was written without access to Xcode (on Windows), so it hasn't been built or run.
 If a test fails on first run, the most likely cause is the list's element type
 (`tables` vs `collectionViews`) in your iOS version; check with Xcode's Accessibility Inspector.
+
+## AI-assisted localization tools (`ai-localization-tools/`)
+
+A separate Python + LLM add-on (runs on Windows, no Mac needed) that sits alongside
+the Swift app and XCUITests without changing them:
+
+- `generate_test_cases.py`: asks Claude to suggest localization UI test case ideas for each string
+  in `Localizable.strings`, and saves them to `generated_test_cases.md`.
+- `check_translations.py`: runs simple checks, then asks Claude to review the Spanish translations
+  against the English source and flag suspect ones.
+
+Both need an `ANTHROPIC_API_KEY`. The LLM output is assistive only and must be human-reviewed.
+See [`ai-localization-tools/README.md`](ai-localization-tools/README.md) for setup and usage.
