@@ -1,6 +1,6 @@
 import XCTest
 
-final class LocalizationDemoUITests: XCTestCase {
+final class iOSLocalizationUITestAutomationUITests: XCTestCase {
 
     var app: XCUIApplication!
 

@@ -1,4 +1,4 @@
-# Localization Demo
+# iOS Localization & UI Test Automation
 
 A tiny SwiftUI to-do list that shows localization. Type an item, tap **Add**, and
 switch the UI between **English** and **Español** with the toggle at the top.
@@ -9,16 +9,16 @@ Target: Xcode 15+, iOS 17 simulator, Swift 5.9.
 ## File structure
 
 ```
-LocalizationDemo/
+iOSLocalizationUITestAutomation/
 ├── README.md
 ├── project.yml                      # XcodeGen spec (creates the .xcodeproj)
-├── LocalizationDemo/                # app target
-│   ├── LocalizationDemoApp.swift    # app entry point
+├── iOSLocalizationUITestAutomation/                # app target
+│   ├── iOSLocalizationUITestAutomationApp.swift    # app entry point
 │   ├── ContentView.swift            # the screen + language lookup
 │   ├── en.lproj/Localizable.strings
 │   └── es.lproj/Localizable.strings
-└── LocalizationDemoUITests/         # UI test target
-    └── LocalizationDemoUITests.swift
+└── iOSLocalizationUITestAutomationUITests/         # UI test target
+    └── iOSLocalizationUITestAutomationUITests.swift
 ```
 
 Accessibility identifiers: `textField`, `addButton`, `itemList`, plus
@@ -29,20 +29,20 @@ Accessibility identifiers: `textField`, `addButton`, `itemList`, plus
 Option A (XcodeGen, quickest):
 1. `brew install xcodegen`
 2. In this folder run `xcodegen generate`
-3. Open `LocalizationDemo.xcodeproj`
+3. Open `iOSLocalizationUITestAutomation.xcodeproj`
 
 Option B (manual):
-1. Xcode > File > New > Project > iOS App (Interface: SwiftUI, Language: Swift), name it `LocalizationDemo`.
+1. Xcode > File > New > Project > iOS App (Interface: SwiftUI, Language: Swift), name it `iOSLocalizationUITestAutomation`.
 2. Replace the generated Swift files with the ones here and add the two `.lproj` folders
    (tick "Copy items" and your app target).
-3. File > New > Target > **UI Testing Bundle**, name it `LocalizationDemoUITests`, and replace its test file.
+3. File > New > Target > **UI Testing Bundle**, name it `iOSLocalizationUITestAutomationUITests`, and replace its test file.
 
 ## Run the tests
 
 - In Xcode: pick an iPhone simulator (iOS 17), press **Cmd+U**, or click the diamond next to a test.
 - Command line:
   ```
-  xcodebuild test -scheme LocalizationDemo \
+  xcodebuild test -scheme iOSLocalizationUITestAutomation \
     -destination 'platform=iOS Simulator,name=iPhone 15'
   ```
 
