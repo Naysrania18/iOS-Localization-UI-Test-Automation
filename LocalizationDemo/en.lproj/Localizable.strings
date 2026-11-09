@@ -1,0 +1,4 @@
+/* English strings. Format: "key" = "text"; */
+"title" = "My To-Do List";
+"placeholder" = "New item";
+"add" = "Add";

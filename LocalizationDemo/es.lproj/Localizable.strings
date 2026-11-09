@@ -1,0 +1,4 @@
+/* Spanish strings. Same keys as English, translated values. */
+"title" = "Mi lista de tareas";
+"placeholder" = "Nuevo elemento";
+"add" = "Añadir";

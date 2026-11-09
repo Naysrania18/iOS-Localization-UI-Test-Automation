@@ -1,0 +1,43 @@
+# XcodeGen spec: generates LocalizationDemo.xcodeproj (run `xcodegen generate`).
+# Install XcodeGen with: brew install xcodegen
+name: LocalizationDemo
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    GENERATE_INFOPLIST_FILE: YES
+targets:
+  LocalizationDemo:
+    type: application
+    platform: iOS
+    sources:
+      - LocalizationDemo
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.LocalizationDemo
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+  LocalizationDemoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - LocalizationDemoUITests
+    dependencies:
+      - target: LocalizationDemo
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.LocalizationDemoUITests
+        TEST_TARGET_NAME: LocalizationDemo
+schemes:
+  LocalizationDemo:
+    build:
+      targets:
+        LocalizationDemo: all
+    test:
+      targets:
+        - LocalizationDemoUITests
